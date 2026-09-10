@@ -39,9 +39,30 @@
       background: #000;
     }
 
+    .portrait {
+      position: absolute;
+      z-index: 1;
+      right: -2%;
+      bottom: -2%;
+      height: 92%;
+      width: auto;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    /* Subtle overall darkening */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.10);
+      z-index: 2;
+      pointer-events: none;
+    }
+
     .content {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       left: 8%;
       top: 50%;
       transform: translateY(-50%);
@@ -69,17 +90,6 @@
       font-size: 0.7rem;
       letter-spacing: 0.04em;
       color: rgba(255, 255, 255, 0.35);
-    }
-
-    .portrait {
-      position: absolute;
-      z-index: 1;
-      right: -2%;
-      bottom: -2%;
-      height: 92%;
-      width: auto;
-      object-fit: contain;
-      object-position: center bottom;
     }
 
     @media (max-width: 800px) {
